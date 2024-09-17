@@ -1,0 +1,21 @@
+<div class="bien-list">
+  <h1>Liste des Biens Immobiliers</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>Nom Immeuble</th>
+      <th>Prix</th>
+      <th>Superficie</th>
+      <th>Date de Construction</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let bien of biens">
+      <td>{{ bien.nom_immeuble }}</td>
+      <td>{{ bien.prix }} €</td>
+      <td>{{ bien.superficie }} m²</td>
+      <td>{{ bien.date_construction | date }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

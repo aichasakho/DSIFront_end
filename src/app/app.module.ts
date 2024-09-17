@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { BienImmobilierComponent } from './bien-immobilier/bien-immobilier.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AnnoncesComponent } from './annonces/annonces.component';
+import { AcceuilsComponent } from './acceuils/acceuils.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BienImmobilierComponent,
+    AnnoncesComponent,
+    AcceuilsComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

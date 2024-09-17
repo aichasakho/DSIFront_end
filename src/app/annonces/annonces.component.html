@@ -1,0 +1,38 @@
+
+<div class="home-banner">
+  <img class="banner-image" src="assets/bg_2.jpg" alt="Bannière Maison" />
+  <div class="banner-content">
+    <img src="assets/images/logo.png" class="logo" alt="Logo DSI" />
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Locations</a></li>
+        <li><a href="#">Ventes</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="#" class="btn">Se connecter</a>
+      <a href="#" class="btn">S'inscrire</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="annonces-section">
+  <h1>Annonces</h1>
+  <div class="annonces-grid">
+    <div class="annonce-item" *ngFor="let annonce of annonces">
+      <img [src]="annonce.bien_immobilier.image" alt="Annonce Image" />
+      <div class="annonce-info">
+        <h2>{{ annonce.type_annonce }}</h2>
+        <p>{{ annonce.description }}</p>
+      </div>
+      <button>Voir plus</button>
+    </div>
+  </div>
+</div>
+
+
+
+
