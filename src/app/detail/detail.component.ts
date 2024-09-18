@@ -9,6 +9,14 @@ import { AnnoncesService } from '../services/annonces.service';
 })
 export class DetailComponent implements OnInit {
   annonce: any;
+  showReservationForm = false;
+  showVisiteurForm = false;// Indique si le formulaire doit être affiché
+  reservation = {
+    name: '',
+    email: '',
+    date: '',
+    people: 1
+  };
 
   constructor(private route: ActivatedRoute, private annoncesService: AnnoncesService) { }
 
@@ -20,17 +28,42 @@ export class DetailComponent implements OnInit {
   }
 
   getAnnonceDetail(id: string) {
-    console.log('Fetching details for annonce ID:', id);
     this.annoncesService.getAnnonceById(id).subscribe(data => {
-      console.log('Annonce details:', data);
       this.annonce = data;
     }, error => {
       console.error('Error fetching annonce detail', error);
     });
   }
 
-  reserve(id: number) {
-    console.log('Réserver clicked for annonce ID:', id);
+  toggleReservationForm() {
+    this.showReservationForm = !this.showReservationForm;
+  }
+
+  toggleVisiteForm() {
+    this.showVisiteurForm = !this.showVisiteurForm;
+  }
+
+  submitReservation() {
+    console.log('Réservation soumise:', this.reservation);
+    this.reservation = {
+      name: '',
+      email: '',
+      date: '',
+      people: 1
+    };
+    this.showReservationForm = false;
+    this.showVisiteurForm = false;
+  }
+
+  submitVisite() {
+    this.reservation = {
+      name: '',
+      email: '',
+      date: '',
+      people: 1
+    };
+    this.showReservationForm = false;
+    this.showVisiteurForm = false;
   }
 
   visit(id: number) {

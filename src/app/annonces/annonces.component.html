@@ -27,8 +27,9 @@
       <div class="annonce-info">
         <h2>{{ annonce.type_annonce }}</h2>
         <p>{{ annonce.description }}</p>
+        <button class="btn btn-success" [routerLink]="['/detail', annonce.id]">Voir plus</button>
       </div>
-      <button [routerLink]="['/detail', annonce.id]">Voir plus</button>
+
     </div>
   </div>
 </div>
