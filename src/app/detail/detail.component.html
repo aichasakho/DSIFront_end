@@ -1,11 +1,17 @@
 <div *ngIf="annonce" class="annonce-detail-container">
-  <h1>{{ annonce.type_annonce }}</h1>
-  <img [src]="annonce.bien_immobilier.image" alt="Annonce Image" />
-  <p>{{ annonce.description }}</p>
+  <div class="annonce-content">
+    <div class="annonce-image">
+      <img [src]="annonce.bien_immobilier.image" alt="Annonce Image" />
+    </div>
 
-  <!-- Boutons Réserver et Visiter -->
-  <div class="annonce-actions">
-    <button (click)="reserve(annonce.id)" class="btn btn-reserve">Réserver</button>
-    <button (click)="visit(annonce.id)" class="btn btn-visit">Visiter</button>
+    <div class="annonce-description">
+      <h1>{{ annonce.type_annonce }}</h1>
+      <p>{{ annonce.description }}</p>
+
+      <div class="annonce-actions">
+        <button (click)="reserve(annonce.id)" class="btn btn-reserve">Réserver</button>
+        <button (click)="visit(annonce.id)" class="btn btn-visit">Visiter</button>
+      </div>
+    </div>
   </div>
 </div>
