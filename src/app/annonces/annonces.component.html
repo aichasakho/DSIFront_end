@@ -28,10 +28,11 @@
         <h2>{{ annonce.type_annonce }}</h2>
         <p>{{ annonce.description }}</p>
       </div>
-      <button>Voir plus</button>
+      <button [routerLink]="['/detail', annonce.id]">Voir plus</button>
     </div>
   </div>
 </div>
+
 
 
 

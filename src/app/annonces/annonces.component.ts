@@ -23,7 +23,4 @@ export class AnnoncesComponent implements OnInit {
       console.error('Error fetching annonces', error);
     });
   }
-
-
-
 }

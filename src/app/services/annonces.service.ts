@@ -13,4 +13,7 @@ export class AnnoncesService {
   getAll(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
+  getAnnonceById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
 }

@@ -6,12 +6,14 @@ import { BienImmobilierComponent } from './bien-immobilier/bien-immobilier.compo
 import { HttpClientModule } from '@angular/common/http';
 import { AnnoncesComponent } from './annonces/annonces.component';
 import { AcceuilsComponent } from './acceuils/acceuils.component';
+import { DetailComponent } from './detail/detail.component';
 @NgModule({
   declarations: [
     AppComponent,
     BienImmobilierComponent,
     AnnoncesComponent,
     AcceuilsComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
