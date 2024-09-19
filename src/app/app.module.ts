@@ -10,6 +10,11 @@ import { AcceuilsComponent } from './acceuils/acceuils.component';
 import { DetailComponent } from './detail/detail.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { VisiteComponent } from './visite/visite.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { LocationsComponent } from './locations/locations.component';
+import { VentesComponent } from './ventes/ventes.component';
+// import { ContactComponent } from './contact/contact.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +24,10 @@ import { VisiteComponent } from './visite/visite.component';
     DetailComponent,
     ReservationComponent,
     VisiteComponent,
+    ContactsComponent,
+    LocationsComponent,
+    VentesComponent,
+    //ContactComponent,
   ],
   imports: [
     BrowserModule,
