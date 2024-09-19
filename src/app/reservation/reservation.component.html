@@ -1,1 +1,37 @@
-<p>reservation works!</p>
+<h2>Formulaire de réservation</h2>
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="date_debut">Date Début:</label>
+    <input type="date" id="date_debut" formControlName="date_debut" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="date_fin">Date Fin:</label>
+    <input type="date" id="date_fin" formControlName="date_fin" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="profession">Profession:</label>
+    <input type="text" id="profession" formControlName="profession" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="situation_matrimonial">Situation Matrimoniale:</label>
+    <select formControlName="situation_matrimonial" id="situation_matrimonial" class="form-control" required>
+      <option value="">Célibataire</option>
+      <option value="Marié">Marié</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="client_nom">Nom Client:</label>
+    <input type="text" id="client_nom" formControlName="client_nom" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label for="bien_immobilier_id">Bien Immobilier:</label>
+    <input type="text" id="bien_immobilier_id" formControlName="bien_immobilier_id" class="form-control" required>
+  </div>
+
+  <button type="submit" class="btn btn-reserve">Confirmer la réservation</button>
+</form>

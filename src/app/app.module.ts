@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { Router } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BienImmobilierComponent } from './bien-immobilier/bien-immobilier.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,7 +25,9 @@ import { VisiteComponent } from './visite/visite.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
