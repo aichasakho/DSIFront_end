@@ -6,6 +6,7 @@ import { AnnoncesComponent } from './annonces/annonces.component';
 import { DetailComponent } from './detail/detail.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { VisiteComponent } from './visite/visite.component';
+
 const routes: Routes = [
   { path: 'biens', component: BienImmobilierComponent },
   { path: 'annonces', component: AnnoncesComponent },
