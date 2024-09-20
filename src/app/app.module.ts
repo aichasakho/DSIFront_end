@@ -13,7 +13,7 @@ import { VisiteComponent } from './visite/visite.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { LocationsComponent } from './locations/locations.component';
 import { VentesComponent } from './ventes/ventes.component';
-// import { ContactComponent } from './contact/contact.component';
+import { ReglementComponent } from './reglement/reglement.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { VentesComponent } from './ventes/ventes.component';
     ContactsComponent,
     LocationsComponent,
     VentesComponent,
-    //ContactComponent,
+    ReglementComponent,
   ],
   imports: [
     BrowserModule,

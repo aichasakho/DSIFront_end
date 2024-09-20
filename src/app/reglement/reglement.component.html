@@ -1,0 +1,32 @@
+<div class="py-12">
+  <div class="card col-md-8 m-auto">
+    <div class="card-header">
+      <a href="" class="btn btn-primary"> Ajouter</a>
+    </div>
+    <table class="table table-striped">
+      <thead class="table-header-group">
+      <tr>
+        <th>Role</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      @foreach($voitures as $voiture)
+      <tr>
+        <td></td>
+        <td>
+          <a href="" class="btn btn-primary">Modifier</a>
+          <form action="" method="post"
+          class="needs-validation d-inline" novalidate>
+          @csrf
+          @method("DELETE")
+          <button type="submit" class="btn btn-danger">Supprimer</button>
+          </form>
+        </td>
+      </tr>
+      @endforeach
+      </tbody>
+    </table>
+  </div>
+
+</div>
