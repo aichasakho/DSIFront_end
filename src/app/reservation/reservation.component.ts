@@ -35,8 +35,9 @@ export class ReservationComponent {
     this.reservationForm = this.fb.group({
       date_debut: ['', Validators.required],
       date_fin: ['', Validators.required],
-      profession: [''],
+      profession: ['', Validators.required],
       situation_matrimonial: ['', Validators.required],
+      client_id: ['', Validators.required],
       client_nom: ['', Validators.required],
       bien_immobilier_id: ['', Validators.required],
     });
