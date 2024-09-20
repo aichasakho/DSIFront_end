@@ -6,6 +6,8 @@ import { AnnoncesComponent } from './annonces/annonces.component';
 import { DetailComponent } from './detail/detail.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { VisiteComponent } from './visite/visite.component';
+import { ContactsComponent } from './contacts/contacts.component';
+
 
 const routes: Routes = [
   { path: 'biens', component: BienImmobilierComponent },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'detail/:id', component: DetailComponent },
   { path: 'reserver', component: ReservationComponent },
   { path: 'visite', component: VisiteComponent },
+  { path: 'contacts', component: ContactsComponent },
   { path: '', redirectTo: '/annonces', pathMatch: 'full' },
   { path: '**', redirectTo: '/annonces' }
 ];
