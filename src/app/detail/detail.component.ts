@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { AnnoncesService } from '../services/annonces.service';
 
 @Component({
@@ -9,16 +9,19 @@ import { AnnoncesService } from '../services/annonces.service';
 })
 export class DetailComponent implements OnInit {
   annonce: any;
+
   showReservationForm = false;
-  showVisiteurForm = false;// Indique si le formulaire doit être affiché
+  showVisiteurForm = false;
   reservation = {
-    name: '',
-    email: '',
-    date: '',
-    people: 1
+    date_debut: '',
+    date_fin: '',
+    profession: '',
+    situation_matrimonial: "",
+    client_nom: "",
+    bien_immobilier_id: ""
   };
 
-  constructor(private route: ActivatedRoute, private annoncesService: AnnoncesService) { }
+  constructor(private route: ActivatedRoute, private annoncesService: AnnoncesService, private router: Router) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -46,10 +49,12 @@ export class DetailComponent implements OnInit {
   submitReservation() {
     console.log('Réservation soumise:', this.reservation);
     this.reservation = {
-      name: '',
-      email: '',
-      date: '',
-      people: 1
+      date_debut: '',
+      date_fin: '',
+      profession: '',
+      situation_matrimonial: "",
+      client_nom: "",
+      bien_immobilier_id: ""
     };
     this.showReservationForm = false;
     this.showVisiteurForm = false;
@@ -57,10 +62,12 @@ export class DetailComponent implements OnInit {
 
   submitVisite() {
     this.reservation = {
-      name: '',
-      email: '',
-      date: '',
-      people: 1
+      date_debut: '',
+      date_fin: '',
+      profession: '',
+      situation_matrimonial: "",
+      client_nom: "",
+      bien_immobilier_id: ""
     };
     this.showReservationForm = false;
     this.showVisiteurForm = false;
@@ -68,5 +75,10 @@ export class DetailComponent implements OnInit {
 
   visit(id: number) {
     console.log('Visiter clicked for annonce ID:', id);
+  }
+
+
+  reserver() {
+    this.router.navigate(['/reserver']);
   }
 }

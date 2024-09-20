@@ -26,32 +26,32 @@
   <hr class="mx-auto mb-5 p-0" style="width:15%"/>
   <div class="annonces-grid">
 
-    <div class="annonce-item" *ngFor="let annonce of annonces">
-      <img [src]="annonce.bien_immobilier.image" alt="Annonce Image" />
-      <span class="badge">{{ annonce.type_annonce }}</span>
-      <div class="annonce-info">
-        <div class="properties">
-          <div class="text p-3">
-            <div class="d-flex">
-              <div class="one">
-                <p>{{ annonce.description }}</p>
-              </div>
-              <div class="two">
-                <span class="text-dark font-weight-bold" style="font-size: 18px;">{{ annonce.prix }}</span>
-              </div>
-            </div>
-            <div style="display: flex; align-items: center; text-align: center;">
-              <span style="margin-right: 10px;"><i class="flaticon-area">Superficie: </i> 250 m²</span>
-              <span style="margin-right: 10px;"><i class="flaticon-bathtub">🛁</i> 3</span>
-              <span><i class="flaticon-bed">🛏️</i> 4</span>
-            </div>
-          </div>
-        </div>
+<!--    <div class="annonce-item" *ngFor="let annonce of annonces">-->
+<!--      <img [src]="annonce.bien_immobilier.image" alt="Annonce Image" />-->
+<!--      <span class="badge">{{ annonce.type_annonce }}</span>-->
+<!--      <div class="annonce-info">-->
+<!--        <div class="properties">-->
+<!--          <div class="text p-3">-->
+<!--            <div class="d-flex">-->
+<!--              <div class="one">-->
+<!--                <p>{{ annonce.description }}</p>-->
+<!--              </div>-->
+<!--              <div class="two">-->
+<!--                <span class="text-dark font-weight-bold" style="font-size: 18px;">{{ annonce.prix }}</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div style="display: flex; align-items: center; text-align: center;">-->
+<!--              <span style="margin-right: 10px;"><i class="flaticon-area">Superficie: </i> 250 m²</span>-->
+<!--              <span style="margin-right: 10px;"><i class="flaticon-bathtub">🛁</i> 3</span>-->
+<!--              <span><i class="flaticon-bed">🛏️</i> 4</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
 
-        <button class="btn btn-outline-primary" [routerLink]="['/detail', annonce.id]">Voir plus</button>
-      </div>
+<!--        <button class="btn btn-outline-primary" [routerLink]="['/detail', annonce.id]">Voir plus</button>-->
+<!--      </div>-->
 
-    </div>
+<!--    </div>-->
   </div>
 </div>
 
