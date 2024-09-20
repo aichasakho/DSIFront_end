@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ReservationService } from  '../services/reservation.service'
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { Router } from '@angular/router';
+import {HttpErrorResponse} from "@angular/common/http";
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
@@ -34,11 +35,12 @@ export class ReservationComponent {
     this.reservationForm = this.fb.group({
       date_debut: ['', Validators.required],
       date_fin: ['', Validators.required],
-      profession: ['', Validators.required],
+      profession: [''],
       situation_matrimonial: ['', Validators.required],
       client_nom: ['', Validators.required],
       bien_immobilier_id: ['', Validators.required],
     });
+
   }
 
   ngOnInit(): void {
@@ -46,23 +48,30 @@ export class ReservationComponent {
   }
 
   onSubmit(): void {
+    console.log('Form Status:', this.reservationForm.status);
+    console.log('Form Values:', this.reservationForm.value);
+    console.log('Form Errors:', this.reservationForm.errors);
+
     if (this.reservationForm.valid) {
-      this.reservationService.getReservation().subscribe({
-        next: (response) => {
-          console.log('reservation effectuer avec succès:', response);
-          alert('reservation envoyer avec succès'); // Notification de succès
-          // this.router.navigate(['/']);
+      this.reservationService.createReservation(this.reservationForm.value).subscribe(
+        response => {
+          console.log('Reservation successful', response);
         },
-        error: (error) => {
-          console.error('Erreur lors de la reservation:', error);
-          alert('Une erreur est survenue lors de l\'envoie pour la reservation'); // Notification d'erreur
+        (error: HttpErrorResponse) => {
+          if (error.status === 422) {
+            console.error('Validation errors:', error.error.errors);
+          } else {
+            console.error('Other error:', error);
+          }
         }
-      });
+      );
     } else {
-      console.log('Formulaire invalide');
-        alert('Formulaire invalide. Veuillez remplir tous les champs requis.'); // Notification d'erreur pour formulaire invalide
+      console.log('Form is invalid');
     }
   }
+
+
+
 
 }
 
