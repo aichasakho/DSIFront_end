@@ -10,6 +10,10 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { VentesComponent } from './ventes/ventes.component';
 import { LoginComponent } from './login/login.component';
 import {RegisterComponent} from "./register/register.component";
+import {MyReservationsComponent} from "./my-reservations/my-reservations.component";
+import {MyGoodsComponent} from "./my-goods/my-goods.component";
+import {ProfileComponent} from "./profile/profile.component";
+import {LocationsComponent} from "./locations/locations.component";
 
 
 const routes: Routes = [
@@ -23,6 +27,10 @@ const routes: Routes = [
   { path: 'ventes', component: VentesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
+  { path: 'my-reservations/:id', component: MyReservationsComponent},
+  { path: 'locations', component: LocationsComponent},
+  { path: 'my-goods/:id', component: MyGoodsComponent},
+  { path: 'profile/:id', component: ProfileComponent},
   { path: '', redirectTo: '/annonces', pathMatch: 'full' },
   { path: '**', redirectTo: '/annonces' }
 ];

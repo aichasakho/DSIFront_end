@@ -19,6 +19,9 @@ import { AnnonceListComponent } from './annonce-list/annonce-list.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MyReservationsComponent } from './my-reservations/my-reservations.component';
+import { MyGoodsComponent } from './my-goods/my-goods.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { RegisterComponent } from './register/register.component';
     NavComponent,
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
+    MyReservationsComponent,
+    MyGoodsComponent,
   ],
   imports: [
     BrowserModule,
