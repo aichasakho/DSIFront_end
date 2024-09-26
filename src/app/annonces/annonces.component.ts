@@ -17,7 +17,7 @@ export class AnnoncesComponent implements OnInit {
   }
 
   getAnnonces() {
-    this.annonceService.getAnnonceLocation().subscribe(data => {
+    this.annonceService.getAll().subscribe(data => {
       console.log('Annonces data:', data);
       this.annonces = data;
     }, error => {
