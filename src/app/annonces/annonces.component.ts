@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import { AnnoncesService } from '../services/annonces.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { AnnoncesService } from '../services/annonces.service';
 })
 export class AnnoncesComponent implements OnInit {
   annonces: any[] = [];
+
 
   constructor(private annonceService: AnnoncesService) {}
 

@@ -1,0 +1,93 @@
+<section class="container">
+  <h1>Creer un compte Utilisateur</h1>
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <button class="btn btn-primary mx-3" (click)="showCliForm()">Creer un compte client</button>
+        <button class="btn btn-primary" (click)="showPropForm()">Creer un compte proprietaire</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3 *ngIf="isCliForm">Formulaire de creation du compte client</h3>
+      <h3 *ngIf="!isCliForm">Formulaire de creation du compte proprietaire</h3>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="nom">Nom:</label>
+          <input type="text" formControlName="nom" id="nom" class="form-control" required>
+          <div *ngIf="!(registerForm) || registerForm.get('nom')?.invalid && registerForm.get('nom')?.touched" class="text-danger">
+            Le nom est obligatoire.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prenom">Prenom:</label>
+          <input type="text" formControlName="prenom" id="prenom" class="form-control" required>
+          <div *ngIf="!(registerForm) || registerForm.get('prenom')?.invalid && registerForm.get('prenom')?.touched" class="text-danger">
+            Le prenom est obligatoire.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" formControlName="email" id="email" class="form-control" required>
+          <div *ngIf="!(registerForm) || registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-danger">
+            L'email est obligatoire.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mot de passe:</label>
+          <input type="password" formControlName="password" id="password" class="form-control" required>
+          <div *ngIf="!(registerForm) || registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-danger">
+            Le mot de passe est obligatoire.
+          </div>
+        </div>
+
+        <!-- confirm password -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirmer le mot de passe:</label>
+          <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control" required>
+          <div *ngIf="!(registerForm) || registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched" class="text-danger">
+            Le mot de passe est obligatoire.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="telephone">Telephone:</label>
+          <input type="text" formControlName="tel" id="telephone" class="form-control" required>
+          <div *ngIf="!(registerForm) || registerForm.get('tel')?.invalid && registerForm.get('tel')?.touched" class="text-danger">
+            Le telephone est obligatoire.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="adresse">Adresse:</label>
+          <input type="text" formControlName="adresse" id="adresse" class="form-control" required>
+          <div *ngIf="!(registerForm) || registerForm.get('adresse')?.invalid && registerForm.get('adresse')?.touched" class="text-danger">
+            L'adresse est obligatoire.
+          </div>
+        </div>
+
+        <!-- cni -->
+        <div class="form-group">
+          <label for="cni">Numéro CNI</label>
+          <input type="text" formControlName="cni" id="cni" class="form-control" required>
+          <div *ngIf="!(registerForm) || registerForm.get('cni')?.invalid && registerForm.get('cni')?.touched" class="text-danger">
+            Le CNI est obligatoire.
+          </div>
+        </div>
+
+        <div>
+          <button *ngIf="isCliForm" class="btn btn-primary" type="submit">Créer mon compte Client</button>
+          <button *ngIf="!isCliForm" class="btn btn-primary" type="submit">Créer mon compte Proprietaire</button>
+          <a routerLink="/login" >
+            <button class="btn btn-secondary ml-3" type="button">Retour</button>
+          </a>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</section>
