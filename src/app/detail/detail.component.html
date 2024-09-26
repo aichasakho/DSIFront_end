@@ -10,7 +10,7 @@
       <p>{{ annonce.description }}</p>
 
       <div class="annonce-actions">
-        <button (click)="reserver()" class="btn btn-reserve">Réserver</button>
+        <button (click)="reserver(annonce.bien_immobilier_id)" class="btn btn-reserve">Réserver</button>
         <button (click)="toggleVisiteForm()" class="btn btn-visit">Visiter</button>
       </div>
     </div>

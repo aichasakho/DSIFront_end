@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'annonces', component: AnnoncesComponent },
   { path: 'acceuil', component: AcceuilsComponent },
   { path: 'detail/:id', component: DetailComponent },
-  { path: 'reserver', component: ReservationComponent },
+  { path: 'reserver/:id', component: ReservationComponent },
   { path: 'visite', component: VisiteComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'ventes', component: VentesComponent },

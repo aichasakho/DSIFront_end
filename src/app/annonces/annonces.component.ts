@@ -25,7 +25,6 @@ export class AnnoncesComponent implements OnInit {
     });
   }
 
-  // Écoute l'événement scroll de la fenêtre
 
 
 }
