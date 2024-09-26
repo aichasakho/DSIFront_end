@@ -1,18 +1,19 @@
-<div class="home-banner">
-  <img class="banner-image" src="../assets/images/banner.jpg" alt="" />
-  <div class="banner-content">
-    <img src="../assets/images/logo.png" class="logo" alt="" />
-    <nav class="navbar">
-      <ul>
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">Locations</a></li>
-        <li><a routerLink="/ventes">Ventes</a></li>
-        <li><a routerLink="/contacts">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="auth-buttons">
-      <a routerLink="/login" class="btn">Se connecter</a>
-      <a routerLink="/register" class="btn">S'inscrire</a>
-    </div>
+
+<!-- top-fixe if route = '/annonces' -->
+<div [ngClass]="{'fixed-top': router.url === '/annonces',
+  'bg-secondary': router.url !== '/annonces' || isScrolled }"
+     class="header d-flex align-items-center justify-content-between p-3">
+  <img src="../assets/images/logo.png" class="logo" alt="" />
+  <nav class="navbar">
+    <ul>
+      <li class="active"><a href="/">Accueil</a></li>
+      <li><a href="#">Locations</a></li>
+      <li><a routerLink="/ventes">Ventes</a></li>
+      <li><a routerLink="/contacts">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="auth-buttons">
+    <a routerLink="/login" class="btn">Se connecter</a>
+    <a routerLink="/register" class="btn">S'inscrire</a>
   </div>
 </div>

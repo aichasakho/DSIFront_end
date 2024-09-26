@@ -148,3 +148,12 @@
   margin-bottom: 10px; /* Espacement en bas */
   font-size: large;
 }
+
+.header {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.header.scrolled {
+  background-color: #f8f9fa; /* Couleur de fond après défilement */
+}
