@@ -16,11 +16,14 @@ export class AnnoncesComponent implements OnInit {
   }
 
   getAnnonces() {
-    this.annonceService.getAll().subscribe(data => {
+    this.annonceService.getAnnonceLocation().subscribe(data => {
       console.log('Annonces data:', data);
       this.annonces = data;
     }, error => {
       console.error('Error fetching annonces', error);
     });
   }
+
+
+
 }

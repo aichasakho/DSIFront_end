@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AnnoncesService {
   private apiUrl = 'http://localhost:8000/api/annonces';
+  private annonceUrl ='http://localhost:8000/api/locationAnnonce';
 
   constructor(private http: HttpClient) {}
 
@@ -15,6 +16,10 @@ export class AnnoncesService {
   }
   getAnnonceById(id: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  getAnnonceLocation(): Observable<any> {
+    return this.http.get<any>(`${this.annonceUrl}`);
   }
 
 
