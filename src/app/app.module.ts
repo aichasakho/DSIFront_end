@@ -15,6 +15,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { LocationsComponent } from './locations/locations.component';
 import { VentesComponent } from './ventes/ventes.component';
 import { ReglementComponent } from './reglement/reglement.component';
+import { AnnonceListComponent } from './annonce-list/annonce-list.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ReglementComponent } from './reglement/reglement.component';
     LocationsComponent,
     VentesComponent,
     ReglementComponent,
+    AnnonceListComponent,
   ],
   imports: [
     BrowserModule,
