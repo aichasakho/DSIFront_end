@@ -16,6 +16,7 @@ import { LocationsComponent } from './locations/locations.component';
 import { VentesComponent } from './ventes/ventes.component';
 import { ReglementComponent } from './reglement/reglement.component';
 import { AnnonceListComponent } from './annonce-list/annonce-list.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AnnonceListComponent } from './annonce-list/annonce-list.component';
     VentesComponent,
     ReglementComponent,
     AnnonceListComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,6 @@ import { AnnonceListComponent } from './annonce-list/annonce-list.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]
