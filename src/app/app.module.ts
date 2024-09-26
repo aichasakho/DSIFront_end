@@ -18,6 +18,7 @@ import { ReglementComponent } from './reglement/reglement.component';
 import { AnnonceListComponent } from './annonce-list/annonce-list.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoginComponent } from './login/login.component';
     AnnonceListComponent,
     NavComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
