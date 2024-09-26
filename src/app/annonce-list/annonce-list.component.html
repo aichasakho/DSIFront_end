@@ -1,0 +1,27 @@
+<h2>{{ type_bien }}s</h2>
+<div class="annonces-grid">
+  <div class="annonce-item" *ngFor="let annonce of filteredAnnonces">
+    <img [src]="annonce.bien_immobilier.image" alt="Annonce Image" />
+    <span class="badge">{{ annonce.type_annonce }}</span>
+    <div class="annonce-info">
+      <div class="properties">
+        <div class="text p-3">
+          <div class="d-flex">
+            <div class="one">
+              <p>{{ annonce.description }}</p>
+            </div>
+            <div class="two">
+              <span class="text-dark font-weight-bold" style="font-size: 18px;">{{ annonce.prix }}</span>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; text-align: center;">
+            <span style="margin-right: 10px;"><i class="flaticon-area">Superficie: </i>{{ annonce.superficie }} m²</span>
+            <span style="margin-right: 10px;"><i class="flaticon-bathtub">🛁</i> </span>
+            <span><i class="flaticon-bed">🛏️</i> </span>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-outline-primary" [routerLink]="['/detail', annonce.id]">Voir plus</button>
+    </div>
+  </div>
+</div>
