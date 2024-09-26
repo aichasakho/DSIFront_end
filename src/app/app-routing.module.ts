@@ -8,6 +8,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { VisiteComponent } from './visite/visite.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { VentesComponent } from './ventes/ventes.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'visite', component: VisiteComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'ventes', component: VentesComponent },
+  { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/annonces', pathMatch: 'full' },
   { path: '**', redirectTo: '/annonces' }
 ];
