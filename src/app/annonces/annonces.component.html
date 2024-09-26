@@ -7,8 +7,8 @@
       <ul>
         <li><a href="#">Accueil</a></li>
         <li><a href="#">Locations</a></li>
-        <li><a href="#">Ventes</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a routerLink="/ventes">Ventes</a></li>
+        <li><a routerLink="/contacts">Contact</a></li>
       </ul>
     </nav>
     <div class="auth-buttons">
@@ -27,7 +27,7 @@
 
       <div class="annonce-item" *ngFor="let annonce of annonces">
         <img [src]="annonce.bien_immobilier.image" alt="Annonce Image" />
-        <span class="badge">{{ annonce.type_annonce }}</span>
+        <span class="badge {{ annonce.type_annonce == 'location' ? ' bg-warning' : ' bg-success'}}">{{ annonce.type_annonce }}</span>
         <div class="annonce-info">
             <div class="properties">
               <div class="text p-3">
