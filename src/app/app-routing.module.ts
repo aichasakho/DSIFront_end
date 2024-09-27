@@ -7,6 +7,7 @@ import { DetailComponent } from './detail/detail.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { VisiteComponent } from './visite/visite.component';
 import { ContactsComponent } from './contacts/contacts.component';
+
 import { VentesComponent } from './ventes/ventes.component';
 import { LoginComponent } from './login/login.component';
 import {RegisterComponent} from "./register/register.component";
@@ -14,6 +15,7 @@ import {MyReservationsComponent} from "./my-reservations/my-reservations.compone
 import {MyGoodsComponent} from "./my-goods/my-goods.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {LocationsComponent} from "./locations/locations.component";
+import {MesLocatairesComponent} from "./mes-locataires/mes-locataires.component";
 
 
 const routes: Routes = [
@@ -24,9 +26,14 @@ const routes: Routes = [
   { path: 'reserver/:id', component: ReservationComponent },
   { path: 'visite', component: VisiteComponent },
   { path: 'contacts', component: ContactsComponent },
+
   { path: 'ventes', component: VentesComponent },
+  { path: 'locations', component: LocationsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
+
+  { path: 'meslocataires', component: MesLocatairesComponent},
+
   { path: 'my-reservations/:id', component: MyReservationsComponent},
   { path: 'locations', component: LocationsComponent},
   { path: 'my-goods/:id', component: MyGoodsComponent},

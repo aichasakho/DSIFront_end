@@ -25,7 +25,7 @@ export class LocationsComponent {
   }
 
   getAnnonceLocation() {
-    this.annonceService.getAll().subscribe(data => {
+    this.annonceService.getAnnonceLocation().subscribe(data => {
       console.log('Annonces data:', data);
       this.annonces = data;
     }, error => {
