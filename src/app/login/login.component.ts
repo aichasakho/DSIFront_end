@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
 
           // Redirect to homepage or intended page after login
           this.router.navigate(['/']);
+          window.location.reload();
         },
         error => {
           if (error.status === 422) {
