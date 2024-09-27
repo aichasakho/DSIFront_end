@@ -18,4 +18,8 @@ export class LoginService {
     const token = localStorage.getItem('authToken');
     return !!token;
   }
+
+  getUserId(): string|null {
+    return localStorage.getItem('userId');
+  }
 }

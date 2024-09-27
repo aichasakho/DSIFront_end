@@ -14,6 +14,7 @@ export class MesLocatairesComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.getLocataires();
   }
 
   private getLocataires() {

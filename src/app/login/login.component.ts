@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
 
           // Save token in local storage
           localStorage.setItem('authToken', response.token);
+          localStorage.setItem('userId', response.user.id);
 
           this.errorMessage = null;
 

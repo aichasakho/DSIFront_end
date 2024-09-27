@@ -3,6 +3,7 @@ import { ReservationService } from  '../services/reservation.service'
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpErrorResponse} from "@angular/common/http";
+import {LoginService} from "../services/login.service";
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
@@ -27,22 +28,23 @@ export class ReservationComponent {
   //   },
   // });
   bienId: string | null;
-
+  userId: string | null;
 
   constructor(
     private fb: FormBuilder,
     private reservationService: ReservationService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private loginService: LoginService,
   ) {
     this.bienId = this.route.snapshot.paramMap.get('id');
-
+    this.userId = loginService.getUserId();
     this.reservationForm = this.fb.group({
       date_debut: ['', Validators.required],
       date_fin: ['', Validators.required],
       profession: ['', Validators.required],
       situation_matrimonial: ['', Validators.required],
-      client_id: [3, Validators.required],
+      client_id: [this.userId, Validators.required],
       client_nom: ['', Validators.required],
       bien_immobilier_id: [this.bienId, Validators.required],
       statut: [false, Validators.required],
