@@ -32,9 +32,10 @@ export class ReservationComponent {
   constructor(
     private fb: FormBuilder,
     private reservationService: ReservationService,
-    private router: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
-    this.bienId = this.router.snapshot.paramMap.get('id');
+    this.bienId = this.route.snapshot.paramMap.get('id');
 
     this.reservationForm = this.fb.group({
       date_debut: ['', Validators.required],
@@ -44,6 +45,7 @@ export class ReservationComponent {
       client_id: [3, Validators.required],
       client_nom: ['', Validators.required],
       bien_immobilier_id: [this.bienId, Validators.required],
+      statut: [false, Validators.required],
     });
 
   }
@@ -60,6 +62,7 @@ export class ReservationComponent {
       this.reservationService.createReservation(this.reservationForm.value).subscribe(
         response => {
           console.log('Reservation successful', response);
+          this.router.navigate(['/my-reservations/' + response.client_id])
         },
         (error: HttpErrorResponse) => {
           if (error.status === 422) {
