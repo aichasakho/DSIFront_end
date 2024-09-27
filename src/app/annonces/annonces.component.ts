@@ -9,7 +9,6 @@ import { AnnoncesService } from '../services/annonces.service';
 export class AnnoncesComponent implements OnInit {
   annonces: any[] = [];
 
-
   constructor(private annonceService: AnnoncesService) {}
 
   ngOnInit(): void {
@@ -24,7 +23,5 @@ export class AnnoncesComponent implements OnInit {
       console.error('Error fetching annonces', error);
     });
   }
-
-
 
 }

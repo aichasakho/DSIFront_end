@@ -1,40 +1,32 @@
+<!--
 
-<!--<div class="annonces-section">
-  <h1>Annonces</h1>
-  <hr class="w-25 mx-auto mb-0 p-0 " style="height: 15px"/>
-  <hr class="mx-auto mb-5 p-0" style="width:15%"/>
-  <div class="annonces-grid">
-    <div class="annonce-item" *ngFor="let annonce of annonces">
-      <img [src]="annonce.bien_immobilier.image" alt="Annonce Image" />
-      <span class="badge">{{ annonce.type_annonce }}</span>
-      <div class="annonce-info">
-        <div class="properties">
-          <div class="text p-3">
-            <div class="d-flex">
-              <div class="one">
-                <p>{{ annonce.description }}</p>
-              </div>
-              <div class="two">
-                <span class="text-dark font-weight-bold" style="font-size: 18px;">{{ annonce.prix }}</span>
-              </div>
-            </div>
-            <div style="display: flex; align-items: center; text-align: center;">
-              <span style="margin-right: 10px;"><i class="flaticon-area">Superficie: </i> 250 m²</span>
-              <span style="margin-right: 10px;"><i class="flaticon-bathtub">🛁</i> 3</span>
-              <span><i class="flaticon-bed">🛏️</i> 4</span>
-            </div>
-          </div>
-        </div>
-
-        <button class="btn btn-outline-primary" [routerLink]="['/detail', annonce.id]">Voir plus</button>
-      </div>
-
+<div class="home-banner">
+  <img class="banner-image" src="assets/images/banner.jpg" alt="" />
+  <div class="banner-content">
+    <img src="assets/images/logo.png" class="logo" alt="" />
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Locations</a></li>
+        <li><a href="#">Ventes</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="#" class="btn">Se connecter</a>
+      <a href="#" class="btn">S'inscrire</a>
     </div>
   </div>
 </div>
 
 
-  <div class="annonce-item" *ngFor="let annonce of annonces">-->
+<div class="annonces-section">
+  <h1>Annonces</h1>
+  <hr class="w-25 mx-auto mb-0 p-0 " style="height: 15px"/>
+  <hr class="mx-auto mb-5 p-0" style="width:15%"/>
+  <div class="annonces-grid">
+
+   <div class="annonce-item" *ngFor="let annonce of annonces">-->
 <!--      <img [src]="annonce.bien_immobilier.image" alt="Annonce Image" />-->
 <!--      <span class="badge">{{ annonce.type_annonce }}</span>-->
 <!--      <div class="annonce-info">-->
@@ -51,7 +43,7 @@
 <!--            <div style="display: flex; align-items: center; text-align: center;">-->
 <!--              <span style="margin-right: 10px;"><i class="flaticon-area">Superficie: </i> 250 m²</span>-->
 <!--              <span style="margin-right: 10px;"><i class="flaticon-bathtub">🛁</i> 3</span>-->
-<!--              <span><i class="flaticon-bed">🛏️</i> 4</span>-->
+<!--              <span><i class="flaticon-bed"></i> 4</span>-->
 <!--            </div>-->
 <!--          </div>-->
 <!--        </div>-->
@@ -60,19 +52,26 @@
 <!--      </div>-->
 
 <!--    </div>-->
-<!-- </div>
-</div> -->
+<!--  </div>-->
+<!--</div>-->
 
-<!--
+
 <footer class="ftco-footer ftco-bg-dark ftco-section">
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <p>&lt;!&ndash;- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;
+
+        <p>&lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;
           Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-          &lt;!&ndash;- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;</p>
+          &lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;</p>
       </div>
     </div>
   </div>
 </footer>
+
+
+
+
+
+
 -->
