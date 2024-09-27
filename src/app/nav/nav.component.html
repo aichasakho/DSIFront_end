@@ -1,22 +1,25 @@
-
-<!-- top-fixe if route = '/annonces' -->
 <div [ngClass]="{'fixed-top': router.url === '/annonces',
   'bg-secondary': router.url !== '/annonces' || isScrolled }"
      class="header d-flex align-items-center justify-content-between p-3">
-  <img src="../assets/images/logo.png" class="logo" alt="" />
+  <img src="../assets/images/logo.png" class="logo" alt="Logo" />
   <nav class="navbar">
     <ul>
-      <li class="active"><a href="/">Accueil</a></li>
+      <li><a routerLink="/">Accueil</a></li>
       <li><a routerLink="/locations">Locations</a></li>
-      <li><a routerLink="/ventes">Ventes</a></li>
       <li><a routerLink="/ventes">Ventes</a></li>
       <li><a routerLink="/meslocataires">Mes locataires</a></li>
       <li><a routerLink="/contacts">Contact</a></li>
     </ul>
   </nav>
   <div class="auth-buttons">
-    <a routerLink="/login" class="btn btn-primary me-2">Se connecter</a>
-    <a routerLink="/register" class="btn btn-primary">S'inscrire</a>
-  </div>
+    <ng-container *ngIf="!isAuthenticated; else logoutButton">
+      <a routerLink="/login" class="btn btn-primary me-2">Se connecter</a>
+      <a routerLink="/register" class="btn btn-primary">S'inscrire</a>
+    </ng-container>
 
+    <!-- Show this block when the user is authenticated -->
+    <ng-template #logoutButton>
+      <button (click)="logout()" class="btn btn-danger">Se déconnecter</button>
+    </ng-template>
+  </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnnoncesService } from '../services/annonces.service';
+import { LoginService } from '../services/login.service'; // Import the LoginService
 
 @Component({
   selector: 'app-detail',
@@ -9,7 +10,6 @@ import { AnnoncesService } from '../services/annonces.service';
 })
 export class DetailComponent implements OnInit {
   annonce: any;
-
   showReservationForm = false;
   showVisiteurForm = false;
   reservation = {
@@ -21,7 +21,12 @@ export class DetailComponent implements OnInit {
     bien_immobilier_id: ""
   };
 
-  constructor(private route: ActivatedRoute, private annoncesService: AnnoncesService, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private annoncesService: AnnoncesService,
+    private router: Router,
+    private loginService: LoginService
+  ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -73,12 +78,16 @@ export class DetailComponent implements OnInit {
     this.showVisiteurForm = false;
   }
 
-  visit(id: number) {
-    console.log('Visiter clicked for annonce ID:', id);
+  reserver(id: number) {
+    if (this.loginService.isAuthenticated()) {
+      this.router.navigate(['/reserver/' + id]);
+    } else {
+      this.router.navigate(['/login'], { queryParams: { returnUrl: '/reserver/' + id } });
+    }
   }
 
 
-  reserver(id: number) {
-    this.router.navigate(['/reserver/'+ id]);
+  visit(id: number) {
+    console.log('Visiter clicked for annonce ID:', id);
   }
 }
