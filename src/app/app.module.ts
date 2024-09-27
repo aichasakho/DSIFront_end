@@ -22,6 +22,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MyReservationsComponent } from './my-reservations/my-reservations.component';
 import { MyGoodsComponent } from './my-goods/my-goods.component';
+import { MesLocatairesComponent } from './mes-locataires/mes-locataires.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { MyGoodsComponent } from './my-goods/my-goods.component';
     ProfileComponent,
     MyReservationsComponent,
     MyGoodsComponent,
+    MesLocatairesComponent,
   ],
   imports: [
     BrowserModule,

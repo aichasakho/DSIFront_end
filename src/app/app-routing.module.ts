@@ -15,6 +15,7 @@ import {MyReservationsComponent} from "./my-reservations/my-reservations.compone
 import {MyGoodsComponent} from "./my-goods/my-goods.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {LocationsComponent} from "./locations/locations.component";
+import {MesLocatairesComponent} from "./mes-locataires/mes-locataires.component";
 
 
 const routes: Routes = [
@@ -30,6 +31,8 @@ const routes: Routes = [
   { path: 'locations', component: LocationsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
+
+  { path: 'meslocataires', component: MesLocatairesComponent},
 
   { path: 'my-reservations/:id', component: MyReservationsComponent},
   { path: 'locations', component: LocationsComponent},
