@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  isAuthenticated: boolean = false;
+  isAuthenticated: boolean = false;  
   isScrolled: boolean = false;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {}
 
   ngOnInit(): void {
     this.checkAuthentication();
@@ -19,7 +19,7 @@ export class NavComponent implements OnInit {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    this.isScrolled = scrollPosition > 100; // Adjust scroll threshold as needed
+    this.isScrolled = scrollPosition > 100;
   }
 
   checkAuthentication() {
@@ -27,13 +27,10 @@ export class NavComponent implements OnInit {
   }
 
   logout() {
-    // Remove token from local storage
     localStorage.removeItem('authToken');
 
-    // Update the isAuthenticated variable
     this.isAuthenticated = false;
 
-    // Redirect to homepage or login page
     this.router.navigate(['/']);
   }
 }

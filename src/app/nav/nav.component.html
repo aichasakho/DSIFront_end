@@ -12,14 +12,11 @@
     </ul>
   </nav>
   <div class="auth-buttons">
-    <ng-container *ngIf="!isAuthenticated; else logoutButton">
-      <a routerLink="/login" class="btn btn-primary me-2">Se connecter</a>
-      <a routerLink="/register" class="btn btn-primary">S'inscrire</a>
-    </ng-container>
+    <a *ngIf="!isAuthenticated" routerLink="/login" class="btn btn-primary me-2">Se connecter</a>
+    <a *ngIf="!isAuthenticated" routerLink="/register" class="btn btn-primary">S'inscrire</a>
 
-    <!-- Show this block when the user is authenticated -->
-    <ng-template #logoutButton>
-      <button (click)="logout()" class="btn btn-danger">Se déconnecter</button>
-    </ng-template>
+
+    <button *ngIf="isAuthenticated" (click)="logout()" class="btn btn-secondary">Se déconnecter</button>
   </div>
+
 </div>
