@@ -11,8 +11,7 @@ export class MesLocatairesService {
 
   private apiUrl = 'http://localhost:8000/api/mes-locataires';
 
-
-  createReservation(reservation : any): Observable<any> {
-    return this.http.post(this.apiUrl,reservation);
+  getLocataires(id: number) : Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 }
