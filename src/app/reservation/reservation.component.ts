@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ReservationService } from  '../services/reservation.service'
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HttpErrorResponse} from "@angular/common/http";
 @Component({
   selector: 'app-reservation',
@@ -26,26 +26,29 @@ export class ReservationComponent {
   //     y: 'top',
   //   },
   // });
+  bienId: string | null;
 
 
   constructor(
     private fb: FormBuilder,
     private reservationService: ReservationService,
+    private router: ActivatedRoute
   ) {
+    this.bienId = this.router.snapshot.paramMap.get('id');
+
     this.reservationForm = this.fb.group({
       date_debut: ['', Validators.required],
       date_fin: ['', Validators.required],
       profession: ['', Validators.required],
       situation_matrimonial: ['', Validators.required],
-      client_id: ['', Validators.required],
+      client_id: [3, Validators.required],
       client_nom: ['', Validators.required],
-      bien_immobilier_id: ['', Validators.required],
+      bien_immobilier_id: [this.bienId, Validators.required],
     });
 
   }
 
   ngOnInit(): void {
-
   }
 
   onSubmit(): void {

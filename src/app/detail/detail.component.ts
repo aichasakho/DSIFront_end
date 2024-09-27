@@ -78,7 +78,7 @@ export class DetailComponent implements OnInit {
   }
 
 
-  reserver() {
-    this.router.navigate(['/reserver']);
+  reserver(id: number) {
+    this.router.navigate(['/reserver/'+ id]);
   }
 }
